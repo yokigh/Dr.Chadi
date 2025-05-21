@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,5 @@ Route::group([
     'middleware' => ['setlocale'],
 ], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.page');
+    Route::resource('sliders', SliderController::class);
 });
