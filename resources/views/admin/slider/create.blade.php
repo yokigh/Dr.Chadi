@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title', __('pages.Create Slider'))
+@section('title', __('pages.CreateSlider'))
 @section('header')
     <script src="{{ asset('admin/assets/libs/tinymce/tinymce.min.js') }}"></script>
 
@@ -152,22 +152,21 @@
             }
             reader.readAsDataURL(file);
         }
-
     </script>
     <script>
-    tinymce.init({
-        selector: 'textarea[id^="desc_"]', // Targets desc_en and desc_ar
-        plugins: 'link image code lists',
-        toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
-        height: 300,
-        directionality: '{{ app()->getLocale() === "ar" ? "rtl" : "ltr" }}',
-        language: '{{ app()->getLocale() }}',
-        setup: function (editor) {
-            editor.on('change', function () {
-                editor.save(); // Updates the textarea content on change
-            });
-        }
-    });
-</script>
+        tinymce.init({
+            selector: 'textarea[id^="desc_"]', // Targets desc_en and desc_ar
+            plugins: 'link image code lists',
+            toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
+            height: 300,
+            directionality: '{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}',
+            language: '{{ app()->getLocale() }}',
+            setup: function(editor) {
+                editor.on('change', function() {
+                    editor.save(); // Updates the textarea content on change
+                });
+            }
+        });
+    </script>
 
 @endsection

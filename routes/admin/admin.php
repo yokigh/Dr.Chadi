@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +32,9 @@ Route::get('/', function (Request $request) {
 Route::group([
     'prefix' => '{lang}/admin',
     'where' => ['lang' => 'en|ar'],
-    'middleware' => ['setlocale'],
+    'middleware' => ['auth','setlocale'],
 ], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.page');
     Route::resource('sliders', SliderController::class);
+    Route::resource('users', UserController::class);
 });

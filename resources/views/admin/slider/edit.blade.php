@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title', __('pages.Edit Slider'))
+@section('title', __('pages.EditSlider'))
 @section('header')
     <script src="{{ asset('admin/assets/libs/tinymce/tinymce.min.js') }}"></script>
 @endsection
@@ -8,7 +8,7 @@
 
     @if ($errors->any())
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     icon: 'error',
                     title: 'خطأ!',
@@ -21,7 +21,7 @@
 
     @if (session('success'))
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
+            document.addEventListener("DOMContentLoaded", function() {
                 Swal.fire({
                     icon: 'success',
                     title: 'نجاح!',
@@ -32,7 +32,8 @@
         </script>
     @endif
 
-    <form action="{{ route('sliders.update', ['slider' => $slider->id, 'lang' => app()->getLocale()]) }}" method="POST" enctype="multipart/form-data" class="row">
+    <form action="{{ route('sliders.update', ['slider' => $slider->id, 'lang' => app()->getLocale()]) }}" method="POST"
+        enctype="multipart/form-data" class="row">
         @csrf
         @method('PUT')
         <div class="col-12">
@@ -47,7 +48,8 @@
                         <div class="form-group mb-3 row">
                             <label class="col-md-2 col-form-label">{{ __('pages.title') }} ({{ strtoupper($lang) }})</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" name="name_{{ $lang }}" value="{{ old('name_' . $lang, $slider->{'name_' . $lang}) }}">
+                                <input class="form-control" type="text" name="name_{{ $lang }}"
+                                    value="{{ old('name_' . $lang, $slider->{'name_' . $lang}) }}">
                             </div>
                         </div>
 
@@ -64,14 +66,14 @@
                         <div id="drop-area" class="drop-area">
                             <p>{{ __('messages.drag_drop_image') }}</p>
                             <input type="file" name="image" id="image" class="form-control" style="display: none;">
-                            <img id="image-preview"
-                                 src="{{ $slider->image ? asset('storage/' . $slider->image) : '#' }}"
-                                 alt="Image Preview"
-                                 style="{{ $slider->image ? 'display: block; margin-top: 10px; max-width: 100%;' : 'display: none;' }}">
+                            <img id="image-preview" src="{{ $slider->image ? asset('storage/' . $slider->image) : '#' }}"
+                                alt="Image Preview"
+                                style="{{ $slider->image ? 'display: block; margin-top: 10px; max-width: 100%;' : 'display: none;' }}">
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary waves-effect waves-light">{{ __('pages.update_slider') }}</button>
+                    <button type="submit"
+                        class="btn btn-primary waves-effect waves-light">{{ __('pages.update_slider') }}</button>
                 </div>
             </div>
         </div>
@@ -145,13 +147,12 @@
 
         function displayImage(file) {
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 imagePreview.src = e.target.result;
                 imagePreview.style.display = 'block';
             }
             reader.readAsDataURL(file);
         }
-
     </script>
 
     <script>
@@ -160,10 +161,10 @@
             plugins: 'link image code lists',
             toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
             height: 300,
-            directionality: '{{ app()->getLocale() === "ar" ? "rtl" : "ltr" }}',
+            directionality: '{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}',
             language: '{{ app()->getLocale() }}',
-            setup: function (editor) {
-                editor.on('change', function () {
+            setup: function(editor) {
+                editor.on('change', function() {
                     editor.save();
                 });
             }
