@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
@@ -37,4 +38,5 @@ Route::group([
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.page');
     Route::resource('sliders', SliderController::class);
     Route::resource('users', UserController::class);
+    Route::resource('category', CategoryController::class);
 });
