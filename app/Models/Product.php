@@ -2,25 +2,28 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Product extends Model
 {
-    use HasFactory;
     protected $fillable = [
+        'category_id',
         'name_en',
         'name_ar',
         'desc_en',
         'desc_ar',
         'image',
         'images',
+        'price',
     ];
     protected $casts = [
         'images' => 'array', // تحويل الصور إلى مصفوفة عند الاسترجاع
     ];
-    public function products()
+    /**
+     * Get the category that owns the product.
+     */
+    public function category()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Category::class);
     }
 }
