@@ -46,3 +46,4 @@ Route::group([
 });
 
 require __DIR__.'/admin/admin.php';
+require __DIR__.'/auth/auth.php';
