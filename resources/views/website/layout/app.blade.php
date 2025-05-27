@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{asset('website/assets/css/fontawesome-pro.css')}}">
     <link rel="stylesheet" href="{{asset('website/assets/css/spacing.css')}}">
     <link rel="stylesheet" href="{{asset('website/assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/custom.css')}}">
 </head>
 
 <body>
@@ -30,7 +31,11 @@
 
     <!-- preloader start -->
     <div id="preloader">
+        
         <div class="bd-loader-inner">
+             
+            <img style="width: 300px; , " src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
+             
             <div class="bd-loader">
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
@@ -40,6 +45,7 @@
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
+               
             </div>
         </div>
     </div>
@@ -92,7 +98,7 @@
                     <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
                             <a href="dashboard.html">
-                                <img src="assets/imgs/logo/logo-white.svg" alt="logo not found">
+                                <img src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
                             </a>
                         </div>
                         <div class="offcanvas__close">
@@ -156,167 +162,106 @@
     <div class="offcanvas__overlay-white"></div>
     <!-- Offcanvas area start -->
 
-    <!-- Header area start -->
-    <header>
-        <div id="header-sticky" class="header-area header-2 header-transparent">
-            <div class="container-fluid">
-                <div class="mega-menu-wrapper">
-                    <div class="header-main">
-                        <div class="header-left">
-                            <div class="header-logo">
-                                <a href="index.html">
-                                    <img src="assets/imgs/logo/logo.svg" alt="logo not found">
-                                </a>
-                            </div>
-                            <div class="mean__menu-wrapper d-none d-lg-block">
-                                <div class="main-menu">
-                                    <nav id="mobile-menu">
-                                        <ul>
-                                            <li class="has-dropdown active menu-thumb">
-                                                <a href="index.html">
+   <!-- Header area start -->
+   <header>
+      <div id="header-sticky" class="header-area header-2 header-transparent">
+         <div class="container-fluid">
+            <div class="mega-menu-wrapper">
+               <div class="header-main">
+                  <div class="header-left">
+                     <div class="header-logo">
+                        <a href="index.html">
+                           <img src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
+                        </a>
+                     </div>
+                     <div class="mean__menu-wrapper d-none d-lg-block">
+                        <div class="main-menu">
+                           <nav id="mobile-menu">
+                              <ul>
+                                            <li class="menu-thumb">
+                                                <a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">
                                                     Home
                                                 </a>
-                                                <ul class="submenu has-homemenu">
-                                                    <li>
-                                                        <div class="homemenu-items">
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb">
-                                                                    <img src="assets/imgs/header/home-1.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index.html" class="theme-btn">
-                                                                            Demo Page
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 01
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/imgs/header/home-2.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-2.html" class="theme-btn">
-                                                                            Demo Page
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 02
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/imgs/header/home-3.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-3.html" class="theme-btn">
-                                                                            Demo Page
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 03
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/imgs/header/home-4.jpg"
-                                                                        alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-4.html" class="theme-btn">
-                                                                            Demo Page
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 04
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown d-lg-none">
-                                                <a href="index.html">Home</a>
-                                                <ul class="submenu">
-                                                    <li><a href="index.html">Medical Center</a></li>
-                                                    <li><a href="index-2.html">Diagnostic Center</a></li>
-                                                    <li><a href="index-3.html">Plastic Surgery</a></li>
-                                                    <li><a href="index-4.html">Medical Shop</a></li>
-                                                </ul>
+                                                
                                             </li>
                                             <li>
-                                                <a href="about.html">About</a>
+                                                <a href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">About</a>
                                             </li>
+                                          
                                             <li class="has-dropdown">
-                                                <a href="blog.html">Services</a>
-                                                <ul class="submenu">
-                                                    <li><a href="service.html">Service</a></li>
-                                                    <li><a href="service-details.html">Service Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="has-dropdown">
-                                                <a href="blog.html">Pages</a>
+                                                <a href="{{ route('product.page', ['lang' => app()->getLocale()]) }}">
+                                                    product
+                                                </a>
                                                 <ul class="submenu">
                                                     <li><a href="appointment.html">Appointment</a></li>
-                                                    <li class="has-dropdown"><a href="doctor.html">Doctor</a>
-                                                        <ul class="submenu">
-                                                            <li><a href="doctor.html">Doctor</a></li>
-                                                            <li><a href="doctor-2.html">Doctor v2</a></li>
-                                                            <li><a href="doctor-3.html">Doctor v3</a></li>
-                                                            <li><a href="doctor-details.html">Doctor Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="project.html">Project</a></li>
-                                                    <li><a href="project-details.html">Project Details</a></li>
-                                                    <li><a href="product.html">Product</a></li>
-                                                    <li><a href="product-details.html">Product Details</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="error.html">Error Page</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="has-dropdown">
-                                                <a href="blog.html">Blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">Blog Default</a></li>
-                                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                                </ul>
+                                            <li class="dropdown">
+                                                <a href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">Blog</a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact</a>
+                                                <a href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">Certificate</a>
+                                            </li> 
+                                            <li>
+                                                <a href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">Contact</a>
                                             </li>
                                         </ul>
-                                    </nav>
-                                    <!-- for wp -->
-                                    <div class="header__hamburger ml-50 d-none">
-                                        <button type="button" class="hamburger-btn offcanvas-open-btn">
-                                            <span>01</span>
-                                            <span>01</span>
-                                            <span>01</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                           </nav>
+                           <!-- for wp -->
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+                  <div class="header-right d-flex justify-content-end">
+                     <div class="header__hamburger d-xl-none">
+                        <div class="sidebar__toggle">
+                           <a class="bar-icon" href="javascript:void(0)">
+                              <span></span>
+                              <span>
+                                 <small></small>
+                              </span>
+                              <span></span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="lang">
+                    @php
+                    use Illuminate\Support\Str;
+
+    $languages = ['en', 'ar'];
+    $currentLang = app()->getLocale();
+    $currentUrl = url()->full();
+
+    function switchLangUrl($newLang, $currentLang, $currentUrl) {
+        if (preg_match('/\/(en|ar)(\/|$)/', $currentUrl)) {
+            return Str::replaceFirst("/$currentLang", "/$newLang", $currentUrl);
+        } else {
+            return url($newLang);
+        }
+    }
+@endphp
+
+<div class="lang">
+    @foreach ($languages as $lang)
+        @if ($lang !== $currentLang)
+            <a href="{{ switchLangUrl($lang, $currentLang, $currentUrl) }}" class="lang_select">
+                {{ $lang }}
+            </a>
+        @else
+            <span style="font-weight: bold">{{ $lang }}</span>
+        @endif
+
+        @if (!$loop->last)
+            |
+        @endif
+    @endforeach
+</div>
+                     </div>
+               </div>
             </div>
-        </div>
-    </header>
+         </div>
+      </div>
+   </header>
     <!-- Header area end -->
     <main>
         @yield('content')
@@ -372,12 +317,12 @@
                             </div>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">Portfoilo</a></li>
-                                    <li><a href="#">News</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">Home</a></li>
+                                    <li><a href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">About</a></li>
+                                    <li><a href="{{ route('product.page', ['lang' => app()->getLocale()]) }}">Product</a></li>
+                                    <li><a href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">Blog</a></li>
+                                    <li><a href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">Certificate</a></li>
+                                    <li><a href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -389,11 +334,11 @@
                             </div>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="#">Teams</a></li>
+                                    <li><a href="#">Cookies</a></li>
                                     <li><a href="#">Careers</a></li>
                                     <li><a href="#">How its work</a></li>
                                     <li><a href="#">Feedback</a></li>
-                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">Quick links</a></li>
                                     <li><a href="#">Privacy policy</a></li>
                                 </ul>
                             </div>
@@ -445,7 +390,7 @@
         </div>
         <div class="fotter-bottom theme-bg-1 pt-25 pb-25">
             <div class="footer-copyright-text text-center">
-                <p class="mb-0">© All Copyright 2024 by <a href="#">Meditek
+                <p class="mb-0">© All Copyright 2024 by #9<a href="#">Meditek
                     </a></p>
             </div>
         </div>
