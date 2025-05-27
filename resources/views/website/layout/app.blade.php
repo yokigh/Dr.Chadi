@@ -162,11 +162,6 @@
     <div class="offcanvas__overlay-white"></div>
     <!-- Offcanvas area start -->
 
-<<<<<<< HEAD
-=======
-    <!-- Header area start -->
-  
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
    <!-- Header area start -->
    <header>
       <div id="header-sticky" class="header-area header-2 header-transparent">
@@ -176,18 +171,14 @@
                   <div class="header-left">
                      <div class="header-logo">
                         <a href="index.html">
-<<<<<<< HEAD
                            <img src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
-=======
-                           <img src="assets/imgs/logo/logo.svg" alt="logo not found">
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
+
                         </a>
                      </div>
                      <div class="mean__menu-wrapper d-none d-lg-block">
                         <div class="main-menu">
                            <nav id="mobile-menu">
                               <ul>
-<<<<<<< HEAD
                                             <li class="menu-thumb">
                                                 <a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">
                                                     Home
@@ -218,162 +209,11 @@
                                         </ul>
                            </nav>
                            <!-- for wp -->
-=======
-                                 <li class="has-dropdown active menu-thumb">
-                                    <a href="index.html">
-                                        Home 
-                                    </a>
-                                    <ul class="submenu has-homemenu">
-                                        <li>
-                                            <div class="homemenu-items">
-                                                <div class="homemenu">
-                                                    <div class="homemenu-thumb">
-                                                        <img src="assets/imgs/header/home-1.jpg" alt="img">
-                                                        <div class="demo-button">
-                                                            <a href="index.html" class="theme-btn">
-                                                               Demo Page
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="homemenu-content text-center">
-                                                        <h4 class="homemenu-title">
-                                                            Home 01
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu">
-                                                    <div class="homemenu-thumb mb-15">
-                                                      <img src="assets/imgs/header/home-2.jpg" alt="img">
-                                                        <div class="demo-button">
-                                                            <a href="index-2.html" class="theme-btn">
-                                                               Demo Page
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="homemenu-content text-center">
-                                                        <h4 class="homemenu-title">
-                                                            Home 02
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu">
-                                                    <div class="homemenu-thumb mb-15">
-                                                      <img src="assets/imgs/header/home-3.jpg" alt="img">
-                                                        <div class="demo-button">
-                                                            <a href="index-3.html" class="theme-btn">
-                                                                Demo Page
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="homemenu-content text-center">
-                                                        <h4 class="homemenu-title">
-                                                            Home 03
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                                <div class="homemenu">
-                                                   <div class="homemenu-thumb mb-15">
-                                                     <img src="assets/imgs/header/home-4.jpg" alt="img">
-                                                       <div class="demo-button">
-                                                           <a href="index-4.html" class="theme-btn">
-                                                               Demo Page
-                                                           </a>
-                                                       </div>
-                                                   </div>
-                                                   <div class="homemenu-content text-center">
-                                                       <h4 class="homemenu-title">
-                                                           Home 04
-                                                       </h4>
-                                                   </div>
-                                               </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                 <li class="has-dropdown d-lg-none">
-                                    <a href="index.html">Home</a>
-                                    <ul class="submenu">
-                                       <li><a href="index.html">Medical Center</a></li>
-                                       <li><a href="index-2.html">Diagnostic Center</a></li>
-                                       <li><a href="index-3.html">Plastic Surgery</a></li>
-                                       <li><a href="index-4.html">Medical Shop</a></li>
-                                    </ul>
-                                 </li>
-                                 <li>
-                                    <a href="about.html">About</a>
-                                 </li>
-                                 <li class="has-dropdown">
-                                    <a href="blog.html">Services</a>
-                                    <ul class="submenu">
-                                       <li><a href="service.html">Service</a></li>
-                                       <li><a href="service-details.html">Service Details</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="has-dropdown">
-                                    <a href="blog.html">Pages</a>
-                                    <ul class="submenu">
-                                       <li><a href="appointment.html">Appointment</a></li>
-                                       <li class="has-dropdown"><a href="doctor.html">Doctor</a>
-                                          <ul class="submenu">
-                                             <li><a href="doctor.html">Doctor</a></li>
-                                             <li><a href="doctor-2.html">Doctor v2</a></li>
-                                             <li><a href="doctor-3.html">Doctor v3</a></li>
-                                             <li><a href="doctor-details.html">Doctor Details</a></li>
-                                          </ul>
-                                       </li>
-                                       <li><a href="project.html">Project</a></li>
-                                       <li><a href="project-details.html">Project Details</a></li>
-                                       <li><a href="product.html">Product</a></li>
-                                       <li><a href="product-details.html">Product Details</a></li>
-                                       <li><a href="wishlist.html">Wishlist</a></li>
-                                       <li><a href="cart.html">Cart</a></li>
-                                       <li><a href="checkout.html">Checkout</a></li>
-                                       <li><a href="error.html">Error Page</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="has-dropdown">
-                                    <a href="blog.html">Blog</a>
-                                    <ul class="submenu">
-                                       <li><a href="blog.html">Blog Default</a></li>
-                                       <li><a href="blog-grid.html">Blog Grid</a></li>
-                                       <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                 </li>
-                                 <li>
-                                    <a href="contact.html">Contact</a>
-                                 </li>
-                              </ul>
-                           </nav>
-                           <!-- for wp -->
-                           <div class="header__hamburger ml-50 d-none">
-                              <button type="button" class="hamburger-btn offcanvas-open-btn">
-                                 <span>01</span>
-                                 <span>01</span>
-                                 <span>01</span>
-                              </button>
-                           </div>
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
+
                         </div>
                      </div>
                   </div>
                   <div class="header-right d-flex justify-content-end">
-<<<<<<< HEAD
-=======
-                     <div class="header-action d-none d-xl-inline-flex gap-5">
-                        <div class="link-text">
-                           <span><img src="assets/imgs/svg/phone-call.svg" alt=""></span>
-                           <a href="tel:+380961381876">+380961381876</a>
-                        </div>
-                        <div class="header-link">
-                           <a href="appointment.html" class="fill-btn">
-                              <span class="fill-btn-inner">
-                                 <span class="fill-btn-normal">appointment</span>
-                                 <span class="fill-btn-hover">appointment</span>
-                              </span>
-                           </a>
-                        </div>
-                     </div>
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
                      <div class="header__hamburger d-xl-none">
                         <div class="sidebar__toggle">
                            <a class="bar-icon" href="javascript:void(0)">
@@ -386,7 +226,6 @@
                         </div>
                      </div>
                   </div>
-<<<<<<< HEAD
                   <div class="lang">
                     @php
                     use Illuminate\Support\Str;
@@ -420,8 +259,6 @@
     @endforeach
 </div>
                      </div>
-=======
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
                </div>
             </div>
          </div>
