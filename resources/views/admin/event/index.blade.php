@@ -26,7 +26,8 @@
                             <tr>
                                 <th>{{ __('pages.name') }}</th>
                                 <th>{{ __('pages.desc') }}</th>
-                                <th>{{ __('pages.date') }}</th>
+                                <th>{{ __('pages.start_date') }}</th>
+                                <th>{{ __('pages.end_date') }}</th>
                                 <th>{{ __('pages.img') }}</th>
                                 <th>{{ __('pages.imgs') }}</th>
                                 <th>{{ __('pages.actions') }}</th>
@@ -37,7 +38,8 @@
                                 <tr>
                                     <td>{{ $event->{'name_' . app()->getLocale()} }}</td>
                                     <td>{!! $event->{'desc_' . app()->getLocale()} !!}</td>
-                                    <td>{{ $event->{'event_date'} }}</td>
+                                    <td>{{ $event->{'start_date'} }}</td>
+                                    <td>{{ $event->{'end_date'} }}</td>
                                     <td>
                                         <img src="{{ asset($event->image) }}" alt="event Image" class="avatar-sm"
                                             onclick="showImageModal('{{ asset($event->image) }}')"

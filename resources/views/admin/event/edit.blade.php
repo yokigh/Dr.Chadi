@@ -34,7 +34,8 @@
         </script>
     @endif
 
-    <form action="{{ route('event.update', ['lang' => app()->getLocale(), 'event' => $event->id]) }}" method="POST" enctype="multipart/form-data" class="row">
+    <form action="{{ route('event.update', ['lang' => app()->getLocale(), 'event' => $event->id]) }}" method="POST"
+        enctype="multipart/form-data" class="row">
         @csrf
         @method('PUT')
         <div class="col-12">
@@ -48,7 +49,8 @@
                         <div class="form-group mb-3 row">
                             <label class="col-md-2 col-form-label">{{ __('pages.title') }} ({{ strtoupper($lang) }})</label>
                             <div class="col-md-10">
-                                <input class="form-control" type="text" name="name_{{ $lang }}" value="{{ old('name_' . $lang, $event->{'name_' . $lang} ) }}">
+                                <input class="form-control" type="text" name="name_{{ $lang }}"
+                                    value="{{ old('name_' . $lang, $event->{'name_' . $lang}) }}">
                             </div>
                         </div>
 
@@ -60,11 +62,21 @@
                         </div>
                     @endforeach
 
-                    {{-- Event Date --}}
+                    {{-- Start Date --}}
                     <div class="form-group mb-3 row">
-                        <label class="col-md-2 col-form-label">{{ __('pages.event_date') }}</label>
+                        <label class="col-md-2 col-form-label">{{ __('pages.start_date') }}</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" name="event_date" value="{{ old('event_date', \Carbon\Carbon::parse($event->event_date)->format('Y-m-d')) }}" required>
+                            <input type="date" class="form-control" name="start_date"
+                                value="{{ old('start_date', $event->start_date ?? '') }}" required>
+                        </div>
+                    </div>
+
+                    {{-- End Date --}}
+                    <div class="form-group mb-3 row">
+                        <label class="col-md-2 col-form-label">{{ __('pages.end_date') }}</label>
+                        <div class="col-md-10">
+                            <input type="date" class="form-control" name="end_date"
+                                value="{{ old('end_date', $event->end_date ?? '') }}" required>
                         </div>
                     </div>
 
@@ -72,16 +84,16 @@
                     <div id="single-drop-area" class="drop-area">
                         <p>{{ __('messages.drag_drop_image') }}</p>
                         <input type="file" name="image" id="image" class="form-control" style="display: none;">
-                        <img id="single-image-preview" 
-                             src="{{ $event->image ? asset($event->image) : '#' }}" 
-                             alt="Image Preview"
-                             style="{{ $event->image ? '' : 'display: none;' }} margin-top: 10px; max-width: 100%;">
+                        <img id="single-image-preview" src="{{ $event->image ? asset($event->image) : '#' }}"
+                            alt="Image Preview"
+                            style="{{ $event->image ? '' : 'display: none;' }} margin-top: 10px; max-width: 100%;">
                     </div>
 
                     {{-- Multiple Image Upload --}}
                     <div id="multi-drop-area" class="drop-area mt-4">
                         <p>{{ __('messages.drag_drop_image') }}</p>
-                        <input type="file" name="images[]" id="images" class="form-control" multiple style="display: none;">
+                        <input type="file" name="images[]" id="images" class="form-control" multiple
+                            style="display: none;">
                         <div id="image-preview-container" class="row mt-3">
                             @if ($event->images)
                                 @foreach (json_decode($event->images, true) as $img)
@@ -225,12 +237,11 @@
             height: 300,
             directionality: '{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}',
             language: '{{ app()->getLocale() }}',
-            setup: function (editor) {
-                editor.on('change', function () {
+            setup: function(editor) {
+                editor.on('change', function() {
                     editor.save();
                 });
             }
         });
     </script>
 @endsection
-

@@ -61,14 +61,24 @@
                         </div>
                     @endforeach
 
-                    {{-- Event Date --}}
+                    {{-- Start Date --}}
                     <div class="form-group mb-3 row">
-                        <label class="col-md-2 col-form-label">{{ __('pages.event_date') }}</label>
+                        <label class="col-md-2 col-form-label">{{ __('pages.start_date') }}</label>
                         <div class="col-md-10">
-                            <input type="date" class="form-control" name="event_date" value="{{ old('event_date') }}"
-                                required>
+                            <input type="date" class="form-control" name="start_date"
+                                value="{{ old('start_date', $event->start_date ?? '') }}" required>
                         </div>
                     </div>
+
+                    {{-- End Date --}}
+                    <div class="form-group mb-3 row">
+                        <label class="col-md-2 col-form-label">{{ __('pages.end_date') }}</label>
+                        <div class="col-md-10">
+                            <input type="date" class="form-control" name="end_date"
+                                value="{{ old('end_date', $event->end_date ?? '') }}" required>
+                        </div>
+                    </div>
+
 
                     <!-- Single Image Upload -->
                     <div id="single-drop-area" class="drop-area">

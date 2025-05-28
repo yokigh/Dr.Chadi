@@ -36,7 +36,8 @@ class EventController extends Controller
             'name_ar' => 'required|string|max:255',
             'desc_en' => 'nullable|string',
             'desc_ar' => 'nullable|string',
-            'event_date' => 'required|date',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000',
         ]);
@@ -105,7 +106,8 @@ class EventController extends Controller
             'name_ar' => 'required|string|max:255',
             'desc_en' => 'nullable|string',
             'desc_ar' => 'nullable|string',
-            'event_date' => 'required|date',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000',
         ]);
