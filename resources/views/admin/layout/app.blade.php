@@ -653,12 +653,4 @@
     <script src="{{ asset('assets/js/app.js') }}"></script>
     @yield('script')
 </body>
-
-<<<<<<< HEAD
-        <script src="{{asset('assets/js/app.js')}}"></script>
-        @yield('script')
-    </body>
 </html>
-=======
-</html>
->>>>>>> ad2e341bfb2f5016176386eee429f3b0a6458aa1
