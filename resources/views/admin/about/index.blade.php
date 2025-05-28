@@ -1,5 +1,5 @@
 @extends('admin.layout.app')
-@section('title', 'product')
+@section('title', 'about')
 @section('header')
 
     <!-- DataTables -->
@@ -15,59 +15,72 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">{{ __('pages.product') }}</h4>
-                    <p class="card-title-desc">{{ __('pages.text_product') }}</p>
-                    <a href="{{ route('product.create', ['lang' => app()->getLocale()]) }}">
-                        <button class="btn btn-primary waves-effect waves-light">{{ __('pages.create_product') }}</button>
+                    <h4 class="header-title">{{ __('pages.about') }}</h4>
+                    <p class="card-title-desc">{{ __('pages.text_about') }}</p>
+                    <a href="{{ route('abouts.create', ['lang' => app()->getLocale()]) }}">
+                        <button class="btn btn-primary waves-effect waves-light">{{ __('pages.create_about') }}</button>
                     </a>
                     <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="width: 100%;">
                         <thead>
                             <tr>
-                                <th>{{ __('pages.name') }}</th>
-                                <th>{{ __('pages.desc') }}</th>
-                                <th>{{ __('pages.price') }}</th>
-                                <th>{{ __('pages.img') }}</th>
-                                <th>{{ __('pages.imgs') }}</th>
-                                <th>{{ __('pages.actions') }}</th>
+                                <th>{{ __('messages.name') }}</th>
+                                <th>{{ __('messages.description') }}</th>
+                                <th>{{ __('messages.image') }}</th>
+                                <th>{{ __('messages.images') }}</th>
+                                <th>{{ __('messages.actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($abouts as $about)
                                 <tr>
-                                    <td>{{ $product->{'name_' . app()->getLocale()} }}</td>
-                                    <td>{!! $product->{'desc_' . app()->getLocale()} !!}</td>
-                                    <td>{{ $product->{'price'} }}</td>
+                                    <td>{{ $about->{'name_' . app()->getLocale()} ?? $about->name_en }}</td>
+                                    <td>{!! $about->{'desc_' . app()->getLocale()} ?? $about->desc_en !!}</td>
                                     <td>
-                                        <img src="{{ asset($product->image) }}" alt="product Image" class="avatar-sm"
-                                            onclick="showImageModal('{{ asset($product->image) }}')"
-                                            style="cursor: pointer;">
+                                        @if ($about->image)
+                                            <a href="{{ asset($about->image) }}" data-fancybox="gallery">
+                                                <img src="{{ asset($about->image) }}" width="50" class="image-preview"
+                                                    alt="Event Image" />
+                                            </a>
+                                        @else
+                                            No Image
+                                        @endif
                                     </td>
                                     <td>
-                                        @if (!empty($product->images))
+
+                                        @if (!empty($about->images))
                                             @php
-                                                $images = is_array($product->images)
-                                                    ? $product->images
-                                                    : json_decode($product->images, true);
+                                                $images = is_array($about->images)
+                                                    ? $about->images
+                                                    : json_decode($about->images, true);
                                             @endphp
+
                                             @foreach ($images as $image)
                                                 <a href="{{ asset($image) }}" data-fancybox="gallery">
                                                     <img src="{{ asset($image) }}" width="50" class="image-preview"
-                                                        alt="product Image" />
+                                                        alt="Event Image" />
                                                 </a>
                                             @endforeach
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('product.edit', ['lang' => app()->getLocale(), 'product' => $product->id]) }}"
-                                            class="btn btn-warning">{{ __('pages.edit') }}</a>
-                                        <form id="delete-form-{{ $product->id }}"
-                                            action="{{ route('product.destroy', ['lang' => app()->getLocale(), 'product' => $product->id]) }}"
-                                            method="POST" style="display: none;">
+                                        <a href="{{ route('abouts.show', ['lang' => app()->getLocale(), 'about' => $about->id]) }}"
+                                            class="btn btn-outline-info btn-sm">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="{{ route('abouts.edit', ['lang' => app()->getLocale(), 'about' => $about->id]) }}"
+                                            class="btn btn-outline-warning btn-sm">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <form id="delete-form-{{ $about->id }}"
+                                            action="{{ route('abouts.destroy', ['about' => $about->id, 'lang' => app()->getLocale()]) }}"
+                                            method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
+                                            <button type="button" class="btn btn-outline-danger btn-sm"
+                                                onclick="confirmDelete({{ $about->id }})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
                                         </form>
-                                        <a href="javascript:void(0);" onclick="confirmDelete({{ $product->id }})"
-                                            class="btn btn-danger">{{ __('pages.delete') }}</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -94,7 +107,7 @@
     <script src="{{ asset('admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/pages/datatables.init.js') }}"></script>
     <script>
-        function confirmDelete(productId) {
+        function confirmDelete(aboutId) {
             Swal.fire({
                 title: "هل أنت متأكد؟",
                 text: "لن تتمكن من التراجع عن هذا!",
@@ -106,7 +119,7 @@
                 cancelButtonText: "إلغاء"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    document.getElementById(`delete-form-${productId}`).submit();
+                    document.getElementById(`delete-form-${aboutId}`).submit();
                 } else {
                     Swal.fire("تم الإلغاء", "لم يتم حذف السلايدر", "info");
                 }
@@ -116,7 +129,7 @@
         function showImageModal(imageUrl) {
             Swal.fire({
                 imageUrl: imageUrl,
-                imageAlt: 'product Image',
+                imageAlt: 'about Image',
                 showConfirmButton: false,
                 padding: '20px',
             });

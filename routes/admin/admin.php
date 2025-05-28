@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -44,4 +45,5 @@ Route::group([
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
     Route::resource('event', EventController::class);
+    Route::resource('abouts', AboutController::class);
 });
