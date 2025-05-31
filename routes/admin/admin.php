@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -37,7 +38,7 @@ Route::get('/', function (Request $request) {
 Route::group([
     'prefix' => '{lang}/admin',
     'where' => ['lang' => 'en|ar'],
-    'middleware' => ['auth','setlocale'],
+    'middleware' => ['auth', 'setlocale'],
 ], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.page');
     Route::resource('sliders', SliderController::class);
@@ -47,4 +48,5 @@ Route::group([
     Route::resource('event', EventController::class);
     Route::resource('abouts', AboutController::class);
     Route::resource('blogs', BlogController::class);
+    Route::resource('certificates', CertificateController::class);
 });
