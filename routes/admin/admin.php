@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AboutController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
@@ -49,4 +50,5 @@ Route::group([
     Route::resource('abouts', AboutController::class);
     Route::resource('blogs', BlogController::class);
     Route::resource('certificates', CertificateController::class);
+    Route::resource('contacts', ContactController::class);
 });
