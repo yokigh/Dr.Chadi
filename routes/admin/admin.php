@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EventController;
+use App\Http\Controllers\Admin\ConditionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -51,4 +52,5 @@ Route::group([
     Route::resource('blogs', BlogController::class);
     Route::resource('certificates', CertificateController::class);
     Route::resource('contacts', ContactController::class);
+    Route::resource('conditions', ConditionController::class);
 });
