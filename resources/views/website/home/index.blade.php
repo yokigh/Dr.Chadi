@@ -86,7 +86,7 @@
                 <div class="col-xxl-6 col-xl-6 col-lg-6">
                     <div class="about-thumb-wrapper p-relative z-index-11">
                         <div class="about-thumb w-img">
-                            <img src="assets/imgs/about/about-thumb-1.jpg" alt="">
+                            <img src="{{ asset($abouts->image) }}" alt="about image">
                         </div>
                         <div class="about-dot">
                             <img src="assets/imgs/about/dot.svg" alt="">
@@ -98,13 +98,11 @@
                     <div class="about-content-box wow fadeInUp" data-wow-delay=".5s">
                         <div class="section-title-wrapper mb-30">
                             <div class="section-subtitle">
-                                <span>About Us</span>
+                                <span>{{ __('pages.about_us') }}</span>
                             </div>
-                            <h2 class="section-title">Best Healthcare</h2>
+                            <h2 class="section-title">{{ $abouts->{'name_' . app()->getLocale()} }}</h2>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisng elit Ut et massa mi. Aliquam in hendr
-                            Pellentesque
-                            sit amet sapiengilla, mattis ligula consectetur, ultrices mauris. Maecenas.</p>
+                        <p>{!! $abouts->{'desc_' . app()->getLocale()} !!}</p>
                         <div class="row gy-3">
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="about-info-item">
@@ -113,7 +111,7 @@
                                             <span><img src="assets/imgs/about/info-01.svg" alt=""></span>
                                         </div>
                                         <h4>More experience</h4>
-                                        <p>edical services required on the spot e.g. for medical</p>
+                                        <p>Medical services required on the spot, e.g., for emergencies.</p>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +122,7 @@
                                             <span><img src="assets/imgs/about/info-02.svg" alt=""></span>
                                         </div>
                                         <h4>Innovation Impact</h4>
-                                        <p>edical services required on the spot e.g. for medical</p>
+                                        <p>Advanced tools and continuous innovation in health solutions.</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,6 +132,7 @@
             </div>
         </div>
     </section>
+
     <!-- About area end -->
 
     <!-- Service area start -->
