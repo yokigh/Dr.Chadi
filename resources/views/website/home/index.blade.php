@@ -135,85 +135,61 @@
 
     <!-- About area end -->
 
-    <!-- Service area start -->
+    <!-- Products area start -->
     <section class="service-area theme-bg-2 section-space">
         <div class="container">
             <div class="row section-title-spacing justify-content-center">
                 <div class="col-xxl-5 col-xl-5 col-lg-6">
                     <div class="section-title-wrapper text-center">
                         <div class="section-subtitle">
-                            <span>Our Service</span>
+                            <span>{{ __('pages.ourproducts') }}</span>
                         </div>
-                        <h2 class="section-title">Best Medical Services</h2>
+                        <h2 class="section-title">Best Medical products</h2>
                     </div>
                 </div>
             </div>
+
             <div class="row gy-5">
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                    <div class="service-item wow fadeInUp" data-wow-delay=".3s">
-                        <div class="service-thumb w-img">
-                            <a href="#"><img src="assets/imgs/service/service-01.jpg" alt=""></a>
-                        </div>
-                        <div class="service-content">
-                            <h4><a href="service-details.html">immediate care</a></h4>
-                            <p>edical services required on the spot e.g. for medical</p>
-                            <div class="service-link"><a href="service-details.html"><i
-                                        class="fa-regular fa-angle-right"></i></a>
+                @foreach ($products as $product)
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="service-item wow fadeInUp" data-wow-delay=".{{ $loop->index + 3 }}s">
+                            <div class="service-thumb w-img">
+                                <a href="#"><img src="{{ asset($product->image) }}"
+                                        alt="{{ $product->{'name_' . app()->getLocale()} }}"></a>
                             </div>
-                            <div class="service-icon">
-                                <span><img src="assets/imgs/service/service-icon-1.svg" alt=""></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                    <div class="service-item wow fadeInUp" data-wow-delay=".5s">
-                        <div class="service-thumb w-img">
-                            <a href="service-details.html"><img src="assets/imgs/service/service-02.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="service-content">
-                            <h4><a href="#">diagnostic center</a></h4>
-                            <p>edical services required on the spot e.g. for medical</p>
-                            <div class="service-link"><a href="service-details.html"><i
-                                        class="fa-regular fa-angle-right"></i></a>
-                            </div>
-                            <div class="service-icon">
-                                <span><img src="assets/imgs/service/service-icon-2.svg" alt=""></span>
+                            <div class="service-content">
+                                <h4>
+                                    <a href="#">{{ $product->{'name_' . app()->getLocale()} }}</a>
+                                </h4>
+                                <p>{{ Str::limit(strip_tags($product->{'desc_' . app()->getLocale()}), 80) }}</p>
+                                <p class="text-primary fw-bold">${{ number_format($product->price, 2) }}</p>
+                                <div class="service-link">
+                                    <a href="#"><i class="fa-regular fa-angle-right"></i></a>
+                                </div>
+                                <div class="service-icon">
+                                    <span><img src="assets/imgs/service/service-icon-{{ $loop->iteration }}.svg"
+                                            alt=""></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                    <div class="service-item wow fadeInUp" data-wow-delay=".7s">
-                        <div class="service-thumb w-img">
-                            <a href="service-details.html"><img src="assets/imgs/service/service-03.jpg"
-                                    alt=""></a>
-                        </div>
-                        <div class="service-content">
-                            <h4><a href="#">pediatric services</a></h4>
-                            <p>edical services required on the spot e.g. for medical</p>
-                            <div class="service-link"><a href="service-details.html"><i
-                                        class="fa-regular fa-angle-right"></i></a>
-                            </div>
-                            <div class="service-icon">
-                                <span><img src="assets/imgs/service/service-icon-3.svg" alt=""></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+
             <div class="btn-wrapper text-center">
-                <a href="service-details.html" class="fill-btn">
+                <a href="{{ route('product.page', ['lang' => app()->getLocale()]) }}" class="fill-btn">
                     <span class="fill-btn-inner">
-                        <span class="fill-btn-normal">View More<i class="fa-regular fa-angle-right"></i></span>
-                        <span class="fill-btn-hover">View More<i class="fa-regular fa-angle-right"></i></span>
+                        <span class="fill-btn-normal">{{ __('pages.view_more') }} <i
+                                class="fa-regular fa-angle-right"></i></span>
+                        <span class="fill-btn-hover">{{ __('pages.view_more') }} <i
+                                class="fa-regular fa-angle-right"></i></span>
                     </span>
                 </a>
             </div>
         </div>
     </section>
-    <!-- Service area end -->
+
+    <!-- Products area end -->
 
     <!-- Appointment area start -->
     <section class="appointment-area theme-bg-1 p-relative z-index-11 fix">

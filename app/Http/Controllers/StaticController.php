@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class StaticController extends Controller
     public function index($lang){
         $sliders = Slider::all();
         $abouts = About::latest()->first();
-        return view ('website.home.index', compact('sliders','abouts'));
+        $products = Product::latest()->take(3)->get();
+        return view ('website.home.index', compact('sliders','abouts','products'));
     }
     public function about($lang){
         return view ('website.about.index');
