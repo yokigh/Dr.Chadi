@@ -7,25 +7,26 @@
             <button class="array-prev"><i class="far fa-chevron-left"></i></button>
             <button class="array-next"><i class="far fa-chevron-right"></i></button>
         </div>
+
         <div class="swiper hero-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="hero-1">
-                        <div class="hero-bg bg-cover" style="background-image: url('assets/imgs/hero/hero-1.png');"></div>
-                        <div class="container">
-                            <div class="row g-4">
-                                <div class="col-lg-9">
-                                    <div class="hero-content">
-                                        <h6>Welcome to Diagno</h6>
-                                        <h1>
-                                            Unveiling the <span>Depths</span> of the <span>Human</span> Mind
-                                        </h1>
+                @foreach ($sliders as $slider)
+                    <div class="swiper-slide">
+                        <div class="hero-1">
+                            <div class="hero-bg bg-cover" style="background-image: url('{{ $slider->image }}');"></div>
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-9">
+                                        <div class="hero-content">
+                                            <h6>{{ $slider->{'name_' . app()->getLocale()} }}</h6>
+                                            <h1>{!! $slider->{'desc_' . app()->getLocale()} !!}</h1>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

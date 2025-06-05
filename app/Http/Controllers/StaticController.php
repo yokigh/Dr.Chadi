@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class StaticController extends Controller
 {
     public function index($lang){
-        return view ('website.home.index');
+        $sliders = Slider::all();
+        return view ('website.home.index', compact('sliders'));
     }
     public function about($lang){
         return view ('website.about.index');
