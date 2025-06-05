@@ -16,7 +16,8 @@ class StaticController extends Controller
         return view ('website.home.index', compact('sliders','abouts','products'));
     }
     public function about($lang){
-        return view ('website.about.index');
+        $abouts = About::all();
+        return view ('website.about.index',compact('abouts'));
     }
     public function product($lang){
         return view ('website.product.index');

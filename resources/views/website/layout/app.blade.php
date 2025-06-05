@@ -11,16 +11,16 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/favicon.svg">
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{asset('website/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/meanmenu.min.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/swiper.min.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/fontawesome-pro.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/spacing.css')}}">
-    <link rel="stylesheet" href="{{asset('website/assets/css/main.css')}}">
-    <link rel="stylesheet" href="{{ asset('website/assets/css/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/meanmenu.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/fontawesome-pro.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/spacing.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('website/assets/css/custom.css') }}">
 </head>
 
 <body>
@@ -31,11 +31,11 @@
 
     <!-- preloader start -->
     <div id="preloader">
-        
+
         <div class="bd-loader-inner">
-             
+
             <img style="width: 300px; , " src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
-             
+
             <div class="bd-loader">
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
@@ -45,7 +45,7 @@
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
                 <span class="bd-loader-item"></span>
-               
+
             </div>
         </div>
     </div>
@@ -162,108 +162,114 @@
     <div class="offcanvas__overlay-white"></div>
     <!-- Offcanvas area start -->
 
-   <!-- Header area start -->
-   <header>
-      <div id="header-sticky" class="header-area header-2 header-transparent">
-         <div class="container-fluid">
-            <div class="mega-menu-wrapper">
-               <div class="header-main">
-                  <div class="header-left">
-                     <div class="header-logo">
-                        <a href="index.html">
-                           <img src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
+    <!-- Header area start -->
+    <header>
+        <div id="header-sticky" class="header-area header-2 header-transparent">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="header-left">
+                            <div class="header-logo">
+                                <a href="index.html">
+                                    <img src="{{ asset('website/assets/imgs/logo/logo.png') }}" alt="logo not found">
 
-                        </a>
-                     </div>
-                     <div class="mean__menu-wrapper d-none d-lg-block">
-                        <div class="main-menu">
-                           <nav id="mobile-menu">
-                              <ul>
+                                </a>
+                            </div>
+                            <div class="mean__menu-wrapper d-none d-lg-block">
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
                                             <li class="menu-thumb">
                                                 <a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">
-                                                    Home
+                                                    {{__('pages.home')}}
                                                 </a>
-                                                
+
                                             </li>
                                             <li>
-                                                <a href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">About</a>
+                                                <a
+                                                    href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">{{__('pages.about')}}</a>
                                             </li>
-                                          
+
                                             <li class="has-dropdown">
                                                 <a href="{{ route('product.page', ['lang' => app()->getLocale()]) }}">
-                                                    product
+                                                    {{__('pages.product')}}
                                                 </a>
                                                 <ul class="submenu">
                                                     <li><a href="appointment.html">Appointment</a></li>
                                                 </ul>
                                             </li>
                                             <li class="dropdown">
-                                                <a href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">Blog</a>
+                                                <a
+                                                    href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">{{__('pages.blog')}}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">Certificate</a>
-                                            </li> 
+                                                <a
+                                                    href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">{{__('pages.certificate')}}</a>
+                                            </li>
                                             <li>
-                                                <a href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">Contact</a>
+                                                <a
+                                                    href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">{{__('pages.Contact')}}</a>
                                             </li>
                                         </ul>
-                           </nav>
-                           <!-- for wp -->
+                                    </nav>
+                                    <!-- for wp -->
 
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="header-right d-flex justify-content-end">
-                     <div class="header__hamburger d-xl-none">
-                        <div class="sidebar__toggle">
-                           <a class="bar-icon" href="javascript:void(0)">
-                              <span></span>
-                              <span>
-                                 <small></small>
-                              </span>
-                              <span></span>
-                           </a>
+                        <div class="header-right d-flex justify-content-end">
+                            <div class="header__hamburger d-xl-none">
+                                <div class="sidebar__toggle">
+                                    <a class="bar-icon" href="javascript:void(0)">
+                                        <span></span>
+                                        <span>
+                                            <small></small>
+                                        </span>
+                                        <span></span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="lang">
-                    @php
-                    use Illuminate\Support\Str;
+                        <div class="lang">
+                            @php
+                                use Illuminate\Support\Str;
 
-    $languages = ['en', 'ar'];
-    $currentLang = app()->getLocale();
-    $currentUrl = url()->full();
+                                $languages = ['en', 'ar'];
+                                $currentLang = app()->getLocale();
+                                $currentUrl = url()->full();
 
-    function switchLangUrl($newLang, $currentLang, $currentUrl) {
-        if (preg_match('/\/(en|ar)(\/|$)/', $currentUrl)) {
-            return Str::replaceFirst("/$currentLang", "/$newLang", $currentUrl);
-        } else {
-            return url($newLang);
-        }
-    }
-@endphp
+                                function switchLangUrl($newLang, $currentLang, $currentUrl)
+                                {
+                                    if (preg_match('/\/(en|ar)(\/|$)/', $currentUrl)) {
+                                        return Str::replaceFirst("/$currentLang", "/$newLang", $currentUrl);
+                                    } else {
+                                        return url($newLang);
+                                    }
+                                }
+                            @endphp
 
-<div class="lang">
-    @foreach ($languages as $lang)
-        @if ($lang !== $currentLang)
-            <a href="{{ switchLangUrl($lang, $currentLang, $currentUrl) }}" class="lang_select">
-                {{ $lang }}
-            </a>
-        @else
-            <span style="font-weight: bold">{{ $lang }}</span>
-        @endif
+                            <div class="lang">
+                                @foreach ($languages as $lang)
+                                    @if ($lang !== $currentLang)
+                                        <a href="{{ switchLangUrl($lang, $currentLang, $currentUrl) }}"
+                                            class="lang_select">
+                                            {{ $lang }}
+                                        </a>
+                                    @else
+                                        <span style="font-weight: bold">{{ $lang }}</span>
+                                    @endif
 
-        @if (!$loop->last)
-            |
-        @endif
-    @endforeach
-</div>
-                     </div>
-               </div>
+                                    @if (!$loop->last)
+                                        |
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </header>
+        </div>
+    </header>
     <!-- Header area end -->
     <main>
         @yield('content')
@@ -319,12 +325,21 @@
                             </div>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">Home</a></li>
-                                    <li><a href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">About</a></li>
-                                    <li><a href="{{ route('product.page', ['lang' => app()->getLocale()]) }}">Product</a></li>
-                                    <li><a href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">Blog</a></li>
-                                    <li><a href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">Certificate</a></li>
-                                    <li><a href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">Contact</a></li>
+                                    <li><a href="{{ route('home.page', ['lang' => app()->getLocale()]) }}">Home</a>
+                                    </li>
+                                    <li><a href="{{ route('about.page', ['lang' => app()->getLocale()]) }}">About</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ route('product.page', ['lang' => app()->getLocale()]) }}">Product</a>
+                                    </li>
+                                    <li><a href="{{ route('blog.page', ['lang' => app()->getLocale()]) }}">Blog</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ route('Certificate.page', ['lang' => app()->getLocale()]) }}">Certificate</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ route('contact.page', ['lang' => app()->getLocale()]) }}">Contact</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -400,18 +415,18 @@
     <!-- Footer area end -->
 
     <!-- JS here -->
-    <script src="{{asset('website/assets/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/meanmenu.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/swiper.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/slick.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/magnific-popup.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/counterup.js')}}"></script>
-    <script src="{{asset('website/assets/js/wow.js')}}"></script>
-    <script src="{{asset('website/assets/js/ajax-form.js')}}"></script>
-    <script src="{{asset('website/assets/js/beforeafter.jquery-1.0.0.min.js')}}"></script>
-    <script src="{{asset('website/assets/js/main.js')}}"></script>
+    <script src="{{ asset('website/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/meanmenu.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/counterup.js') }}"></script>
+    <script src="{{ asset('website/assets/js/wow.js') }}"></script>
+    <script src="{{ asset('website/assets/js/ajax-form.js') }}"></script>
+    <script src="{{ asset('website/assets/js/beforeafter.jquery-1.0.0.min.js') }}"></script>
+    <script src="{{ asset('website/assets/js/main.js') }}"></script>
     @yield('scripts')
 </body>
 

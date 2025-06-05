@@ -320,40 +320,6 @@
     </section>
     <!-- Why choose area end -->
 
-    <!-- Brand area start -->
-    <div class="brand-area section-space-bottom">
-        <div class="container">
-            <div class="brand-grid">
-                <div class="brand-item">
-                    <div class="brand-thumb">
-                        <img src="assets/imgs/brand/brand-01.png" alt="">
-                    </div>
-                </div>
-                <div class="brand-item">
-                    <div class="brand-thumb">
-                        <img src="assets/imgs/brand/brand-02.png" alt="">
-                    </div>
-                </div>
-                <div class="brand-item">
-                    <div class="brand-thumb">
-                        <img src="assets/imgs/brand/brand-03.png" alt="">
-                    </div>
-                </div>
-                <div class="brand-item">
-                    <div class="brand-thumb">
-                        <img src="assets/imgs/brand/brand-04.png" alt="">
-                    </div>
-                </div>
-                <div class="brand-item">
-                    <div class="brand-thumb">
-                        <img src="assets/imgs/brand/brand-05.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand area end -->
-
     <!-- section divider -->
     <div class="section-divider">
         <div class="container">
