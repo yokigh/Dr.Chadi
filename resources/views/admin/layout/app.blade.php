@@ -183,17 +183,42 @@
                 <div id="sidebar-menu">
                     <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
-                        <li class="menu-title">Menu</li>
+                        <li class="menu-title">{{__('pages.Menu')}}</li>
+
                         <li>
                             <a href="{{ route('dashboard.page', ['lang' => app()->getLocale()]) }}"
                                 class="waves-effect">
-                                <div class="d-inline-block icons-sm me-1"><i class="uim uim-airplay"></i></div>
-                                <span>Dashboard</span>
+                                <i class="uim uim-airplay"></i>
+                                <span>{{__('pages.Dashboard')}}</span>
                             </a>
                         </li>
+
+                        <li><a href="{{ route('sliders.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-image"></i><span>{{__('pages.Sliders')}}</span></a></li>
+                        <li><a href="{{ route('users.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-user"></i><span>{{__('pages.Users')}}</span></a></li>
+                        <li><a href="{{ route('category.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-layer-group"></i><span>{{__('pages.Categories')}}</span></a>
+                        </li>
+                        <li><a href="{{ route('product.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-box"></i><span>{{__('pages.Products')}}</span></a></li>
+                        <li><a href="{{ route('event.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-calendar-alt"></i><span>{{__('pages.Events')}}</span></a></li>
+                        <li><a href="{{ route('abouts.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-info-circle"></i><span>{{__('pages.AboutUs')}}</span></a></li>
+                        <li><a href="{{ route('blogs.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-blogger-alt"></i><span>{{__('pages.Blogs')}}</span></a></li>
+                        <li><a href="{{ route('certificates.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-file-check"></i><span>{{__('pages.Certificates')}}</span></a>
+                        </li>
+                        <li><a href="{{ route('contacts.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-envelope"></i><span>{{__('pages.Contacts')}}</span></a></li>
+                        <li><a href="{{ route('conditions.index', ['lang' => app()->getLocale()]) }}"
+                                class="waves-effect"><i class="uim uim-notes"></i><span>{{__('pages.Conditions')}}</span></a></li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
+
             </div>
         </div>
         <!-- Left Sidebar End -->
@@ -628,29 +653,30 @@
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('admin/assets/libs/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/node-waves/waves.min.js') }}"></script>
 
     <script src="{{ url('https://unicons.iconscout.com/release/v2.0.1/script/monochrome/bundle.js') }}"></script>
 
     <!-- datepicker -->
-    <script src="{{ asset('assets/libs/air-datepicker/js/datepicker.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/air-datepicker/js/i18n/datepicker.en.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/air-datepicker/js/datepicker.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/air-datepicker/js/i18n/datepicker.en.js') }}"></script>
 
     <!-- apexcharts -->
-    <script src="{{ asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-    <script src="{{ asset('assets/libs/jquery-knob/jquery.knob.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/jquery-knob/jquery.knob.min.js') }}"></script>
 
     <!-- Jq vector map -->
-    <script src="{{ asset('assets/libs/jqvmap/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/jqvmap/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/libs/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
 
-    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/pages/dashboard.init.js') }}"></script>
 
-    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/app.js') }}"></script>
     @yield('script')
 </body>
+
 </html>
