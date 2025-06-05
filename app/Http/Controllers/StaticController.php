@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Certificate;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -35,7 +36,8 @@ class StaticController extends Controller
         return view('website.blog.show');
     }
     public function Certificate($lang){
-        return view('website.Certificate.index');
+        $certificates = Certificate::all();
+        return view('website.Certificate.index',compact('certificates'));
     }
     public function showcertificate($lang,$certificate){
         return view('website.certificate.show');
