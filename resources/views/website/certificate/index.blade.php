@@ -33,7 +33,6 @@
                             class="img1" style="max-height:400px;">
                     </div>
                     <div class="card-footer">
-                        <span>{{ $certificate->created_at->format('d/m/Y') }}</span>
                         <h3>{{ $certificate->{'name_' . app()->getLocale()} }}</h3>
                     </div>
                 </div>
